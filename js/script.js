@@ -1,0 +1,1 @@
+import{initWordCounter}from"./modules/word-counter.js";window.addEventListener("DOMContentLoaded",(()=>{window.addEventListener("load",(()=>{initWordCounter()}))}));

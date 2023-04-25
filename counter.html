@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="./site.webmanifest">
+    <title>Word counter</title>
+    <meta name="description" content="Word counter written for fun and learning">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body class="page__body">
+    <header class="page__header header">
+      <div class="container header__container">
+        <a class="header__logo-link" href="https://sephellone.github.io/portfolio/">
+          <svg width="60" height="60" role="img" aria-label="Alexandra Tsidulko. Personal logo. This link will take you to portfolio website.">
+            <use href="./img/icons/stack.svg#logo"></use>
+          </svg>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__link" href="./index.html">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page__main counter">
+      <div class="container counter__container">
+        <section class="counter__section" data-counter="parent">
+          <h1 class="page__title">Word counter</h1>
+          <p class="counter__description"></p>
+          <label class="counter__label">
+            <textarea class="counter__textarea" name="message" id="user-input" data-counter="textarea" placeholder="Enter text here"></textarea>
+            <span>Enter text here</span>
+          </label>
+          <button class="counter__reset-button" type="button" data-counter="reset">Reset</button>
+          <dl class="counter__list">
+            <div class="counter__item" data-counter="item">
+              <dt class="counter__title">Symbols:</dt>
+              <dd class="counter__number" data-counter="symbols">0</dd>
+            </div>
+            <div class="counter__item" data-counter="item">
+              <dt class="counter__title">Non-space symbols:</dt>
+              <dd class="counter__number" data-counter="non-space">0</dd>
+            </div>
+            <div class="counter__item" data-counter="item">
+              <dt class="counter__title">Words:</dt>
+              <dd class="counter__number" data-counter="words">0</dd>
+            </div>
+          </dl>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page__footer footer">
+      <div class="container footer__container">
+        <h2 class="visually-hidden">Copyright</h2>
+
+        <p class="footer__text">
+          <svg width="20" height="20">
+            <use href="./img/icons/stack.svg#icon-copyright"></use>
+          </svg>
+          Designed and developed by Alexandra Tsidulko
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/script.js" type="module"></script>
+  </body>
+</html>
