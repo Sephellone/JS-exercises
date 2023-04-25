@@ -1,0 +1,47 @@
+:root {
+  --basic-white: #ffffff;
+  --neutral-gray: #a0a0a0;
+  --success-green: rgba(17, 123, 27, 0.9);
+  --fail-red: rgba(123, 17, 17, 0.9);
+  --background-primary: #292e3c;
+  --background-secondary: #1a1e27;
+  --color-accent: #0af2dc;
+  --color-text: #c6d3d9;
+  --color-accent-transparent02: rgba(10, 242, 220, 0.2);
+  --color-accent-transparent05: rgba(10, 242, 220, 0.5);
+  --color-accent-transparent015: rgba(10, 242, 220, 0.15);
+}
+
+
+html {
+  scroll-behavior: smooth;
+
+  @media screen and (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+}
+
+*:focus-visible {
+  outline: 1px solid var(--color-accent);
+  outline-offset: 2px;
+}
+
+img,
+video {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+textarea {
+  resize: none;
+}
+
+a,
+button {
+  &:active {
+    opacity: 0.5;
+  }
+}

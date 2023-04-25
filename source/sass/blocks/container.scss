@@ -1,0 +1,15 @@
+.container {
+  box-sizing: border-box;
+  max-width: $vp-desktop-max;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+
+  @include vp-tablet {
+    padding: 0 40px;
+  }
+
+  @include vp-mobile {
+    padding: 0 15px;
+  }
+}

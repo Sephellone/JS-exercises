@@ -1,0 +1,118 @@
+.counter {
+  padding: 40px 0;
+}
+
+.counter__label {
+  position: relative;
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 700px;
+  margin: 0;
+  margin-bottom: 20px;
+
+  span {
+    position: absolute;
+    top: 12px;
+    left: 10px;
+    display: block;
+    font-family: $ff-Montserrat;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    transition: 0.3s ease;
+    transition-property: top font-size;
+  }
+}
+
+.counter__textarea {
+  box-sizing: border-box;
+  width: 100%;
+  height: 300px;
+  padding: 15px 10px;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+
+  font-family: $ff-Montserrat;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 20px;
+
+  &::placeholder {
+    color: transparent;
+  }
+
+  &:hover {
+    background-color: var(--color-accent-transparent015);
+  }
+
+  &:focus + span,
+  &:not(:placeholder-shown) + span {
+    font-size: 10px;
+    line-height: 12px;
+    top: 2px;
+  }
+}
+
+.counter__list {
+  box-sizing: border-box;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.counter__item {
+  box-sizing: border-box;
+  max-width: 250px;
+  margin: 0;
+  margin-right: 40px;
+  margin-bottom: 15px;
+
+  @include vp-mobile {
+    max-width: 40%;
+  }
+}
+
+.counter__title {
+  display: block;
+  margin: 0;
+  margin-bottom: 5px;
+  padding: 0;
+  font-weight: 600;
+}
+
+.counter__number {
+  display: block;
+  margin: 0;
+  padding: 0;
+  padding-left: 40px;
+  word-break: break-all;
+  text-align: right;
+}
+
+.counter__reset-button {
+  display: inline-block;
+  box-sizing: border-box;
+  min-width: 100px;
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 10px;
+  background-color: transparent;
+  font-family: $ff-Montserrat;
+  font-weight: 400;
+  font-size: 14px;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+  border-radius: 5px;
+  cursor: pointer;
+
+  &:hover,
+  &:focus-visible {
+    color: var(--color-accent);
+    border-color: var(--color-accent);
+  }
+}

@@ -1,0 +1,24 @@
+.footer {
+  background-color: var(--background-secondary);
+  color: var(--color-text);
+  padding: 20px 0;
+}
+
+.footer__text {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+
+  @include vp-mobile {
+    font-size: 11px;
+  }
+
+  svg {
+    margin-right: 15px;
+
+    @include vp-mobile {
+      margin-right: 7px;
+    }
+  }
+}

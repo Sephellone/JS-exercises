@@ -1,0 +1,17 @@
+@mixin vp-desktop-plus {
+  @media (min-width: ($vp-desktop-max)) {
+    @content;
+  }
+}
+
+@mixin vp-tablet {
+  @media (max-width: ($vp-tablet-max)) {
+    @content;
+  }
+}
+
+@mixin vp-mobile {
+  @media (max-width: ($vp-mobile-max)) {
+    @content;
+  }
+}
