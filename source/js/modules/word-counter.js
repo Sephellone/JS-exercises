@@ -20,6 +20,8 @@ const initWordCounter = () => {
   const symbols = wordCounterParent.querySelector('[data-counter="symbols"]');
   const nonSpaceSymbols = wordCounterParent.querySelector('[data-counter="non-space"]');
   const words = wordCounterParent.querySelector('[data-counter="words"]');
+  const specialChars = wordCounterParent.querySelector('[data-counter="specials"]');
+  const paragraphs = wordCounterParent.querySelector('[data-counter="paragraphs"]');
 
   function inputHandler(evt) {
     const inputedValue = evt.target.value;
@@ -33,6 +35,14 @@ const initWordCounter = () => {
 
     if (words) {
       words.textContent = countWords(inputedValue);
+    }
+
+    if (specialChars) {
+      specialChars.textContent = countSpecialSymbols(inputedValue);
+    }
+
+    if (paragraphs) {
+      paragraphs.textContent = countParagraphs(inputedValue);
     }
   }
 
@@ -60,7 +70,7 @@ function countSymbols(inputValue) {
 function countNonSpaceSymbols(inputValue) {
   if(typeof inputValue === 'string') {
     const arrayOfSymbols = inputValue.split('');
-    const filteredSymbols = arrayOfSymbols.filter(item => item !== ' ');
+    const filteredSymbols = arrayOfSymbols.filter(item => item !== ' '  && item !== '\n');
     return filteredSymbols.length;
   }
 }
@@ -68,9 +78,43 @@ function countNonSpaceSymbols(inputValue) {
 function countWords(inputValue) {
   if(typeof inputValue === 'string') {
     const arrayOfWords = inputValue.split(' ');
-    const filteredWords = arrayOfWords.filter(item => item !== '');
+    const filteredWords = arrayOfWords.filter((item) => {
+      return item !== '' && isOnlySpecial(item) === false;
+    });
     return filteredWords.length;
   }
+}
+
+function isSpecialSymbols(symbol) {
+  const specialSymbolsFormat = /[!-\/:-@[-`{-~]/;
+  return specialSymbolsFormat.test(symbol);
+}
+
+function countSpecialSymbols(inputValue) {
+  const symbols = inputValue.split('');
+  const specialSymbols = symbols.filter(symbol => isSpecialSymbols(symbol));
+  return specialSymbols.length;
+}
+
+function isOnlySpecial(word) {
+  const chars = word.split('');
+  return chars.every(char => isSpecialSymbols(char));
+}
+
+function isSpace(symbol) {
+  return symbol === ' ';
+}
+
+function isOnlySpaces(word) {
+  const chars = word.split('');
+  return chars.every(isSpace);
+}
+
+function countParagraphs(inputValue) {
+  const paragraphs = inputValue.split('\n').filter((item) => {
+    return item !== '' && !isOnlySpaces(item);
+  });
+  return paragraphs.length;
 }
 
 export {initWordCounter};
