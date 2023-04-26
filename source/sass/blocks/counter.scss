@@ -58,22 +58,32 @@
 
 .counter__list {
   box-sizing: border-box;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 50px;
+  row-gap: 10px;
   width: 100%;
+  max-width: 700px;
   margin: 0;
   padding: 0;
+
+  @include vp-mobile {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
 }
 
 .counter__item {
   box-sizing: border-box;
-  max-width: 250px;
+  place-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   margin: 0;
-  margin-right: 40px;
-  margin-bottom: 15px;
+  padding: 10px;
 
   @include vp-mobile {
-    max-width: 40%;
+    padding: 0;
   }
 }
 
@@ -89,9 +99,7 @@
   display: block;
   margin: 0;
   padding: 0;
-  padding-left: 40px;
   word-break: break-all;
-  text-align: right;
 }
 
 .counter__reset-button {

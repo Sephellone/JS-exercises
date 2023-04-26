@@ -36,7 +36,10 @@
       <div class="container counter__container">
         <section class="counter__section" data-counter="parent">
           <h1 class="page__title">Word counter</h1>
-          <p class="counter__description"></p>
+          <p class="counter__description">
+            This input field will count words and characters for you. <br>
+            Keep in mind that 'Symbols' counts line break as a character, while 'Characters' doesn't.
+          </p>
           <label class="counter__label">
             <textarea class="counter__textarea" name="message" id="user-input" data-counter="textarea" placeholder="Enter text here"></textarea>
             <span>Enter text here</span>
@@ -48,9 +51,17 @@
               <dd class="counter__number" data-counter="symbols">0</dd>
             </div>
             <div class="counter__item" data-counter="item">
-              <dt class="counter__title">Non-space symbols:</dt>
+              <dt class="counter__title">Characters:</dt>
+              <dd class="counter__number" data-counter="not-line-break">0</dd>
+            </div>
+            <div class="counter__item" data-counter="item">
+              <dt class="counter__title">Without spaces:</dt>
               <dd class="counter__number" data-counter="non-space">0</dd>
             </div>
+            <!-- <div class="counter__item" data-counter="item">
+              <dt class="counter__title">Numbers:</dt>
+              <dd class="counter__number" data-counter="numbers">0</dd>
+            </div> -->
             <div class="counter__item" data-counter="item">
               <dt class="counter__title">Special characters:</dt>
               <dd class="counter__number" data-counter="specials">0</dd>
