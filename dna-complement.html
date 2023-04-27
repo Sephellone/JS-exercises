@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="./site.webmanifest">
+    <title>Complementary strand creator</title>
+    <meta name="description" content="Small tool that creates complementary DNA or RNA strand based in inputed sequence">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body class="page__body">
+    <header class="page__header header">
+      <div class="container header__container">
+        <a class="header__logo-link" href="https://sephellone.github.io/portfolio/">
+          <svg width="60" height="60" role="img" aria-label="Alexandra Tsidulko. Personal logo. This link will take you to portfolio website.">
+            <use href="./img/icons/stack.svg#logo"></use>
+          </svg>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__link" href="./index.html">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page__main">
+      <section class="dna">
+        <div class="container dna__container" data-dna="parent">
+          <h1 class="page__title">Complementary strand creator</h1>
+          <p class="dna__description">
+            This tool creates complementary strand for given DNA sequence.
+          </p>
+          <p class="dna__description">
+            Input your sequence, choose output settings and click the button!
+          </p>
+          <div class="dna__input-wrapper" data-dna="input-wrapper">
+            <label class="dna__label">
+              <span class="dna__label-text">
+                Input DNA sequence from 5'-end to 3'-end
+              </span>
+              <textarea class="dna__textarea" name="dna" data-dna="input"></textarea>
+            </label>
+            <p class="dna__legend">
+              Choose output settings
+            </p>
+            <div class="dna__options">
+              <div class="dna__radio-group">
+                <label class="dna__radio-label">
+                  <input class="visually-hidden" type="radio" name="na" value="dna" checked>
+                  <span class="dna__radio-text">DNA</span>
+                </label>
+                <label class="dna__radio-label">
+                  <input class="visually-hidden" type="radio" name="na" value="rna">
+                  <span class="dna__radio-text">RNA</span>
+                </label>
+              </div>
+              <div class="dna__radio-group">
+                <label class="dna__radio-label">
+                  <input class="visually-hidden" type="radio" name="direction" value="53" checked>
+                  <span class="dna__radio-text">5' - 3'</span>
+                </label>
+                <label class="dna__radio-label">
+                  <input class="visually-hidden" type="radio" name="direction" value="35">
+                  <span class="dna__radio-text">3' - 5'</span>
+                </label>
+              </div>
+            </div>
+            <button class="dna__button" type="button" data-dna="button-create">Create complementary strand</button>
+          </div>
+
+          <div class="dna__analysis-wrapper hidden" id="analysis" data-dna="analysis-wrapper">
+            <h2 class="dna__initial-title">Inputed sequence:</h2>
+            <p class="dna__error-message hidden" data-dna="error-letter">Error: There are non-DNA letters in your sequence</p>
+            <p class="dna__error-message hidden" data-dna="error-cyrillic">
+              Error: There are cyrillic letters in your sequence. <br>
+              <small>Cyrillic characters will be replaced with the corresponding latin characters for calculations but will remain cyrillic in the initial input field.
+              </small>
+            </p>
+
+            <p class="dna__initial" data-dna="initial">
+              <span>A</span>
+              <span>T</span>
+              <span>G</span>
+              <span class="dna__error-letter">H</span>
+              <span class="dna__error-letter">С</span>
+              <span>G</span>
+              <span>A</span>
+              <span>T</span>
+              <span class="dna__error-letter">P</span>
+              <span>A</span>
+            </p>
+          </div>
+
+          <div data-dna="result-container"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="page__footer footer">
+      <div class="container footer__container">
+        <h2 class="visually-hidden">Copyright</h2>
+
+        <p class="footer__text">
+          <svg width="20" height="20">
+            <use href="./img/icons/stack.svg#icon-copyright"></use>
+          </svg>
+          Designed and developed by Alexandra Tsidulko
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/script.js" type="module"></script>
+    <template id="result">
+      <div class="dna__result-wrapper" data-dna="result-wrapper">
+        <h2 class="dna__result-title">Complementary RNA strand from 3' to 5':</h2>
+        <div class="dna__result" data-dna="result"></div>
+        <button class="dna__button" type="button" data-dna="copy-button">Copy to clipboard</button>
+      </div>
+    </template>
+  </body>
+</html>
