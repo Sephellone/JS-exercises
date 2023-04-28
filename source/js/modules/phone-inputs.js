@@ -18,7 +18,7 @@ const initDigitalPhone = () => {
   const digitalButtonsClickHandler = (evt) => {
     const button = evt.target;
     const value = button.dataset.digitalPhone;
-    buttonSound.src = (value !== '*' && value !== '#') ? `./../sounds/dial${value}.wav` : './../sounds/dial1.wav';
+    buttonSound.src = (value !== '*' && value !== '#') ? `./sounds/dial${value}.wav` : './sounds/dial1.wav';
     buttonSound.play();
     input.value += value;
   }
