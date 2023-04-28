@@ -1,0 +1,44 @@
+.phones {
+  padding: 40px 0;
+}
+
+.phones__section-title {
+  margin: 0;
+  margin-bottom: 15px;
+  padding: 0;
+  font-size: 20px;
+  line-height: 130%;
+  font-weight: 600;
+
+  @include vp-mobile {
+    font-size: 16px;
+  }
+}
+
+.phones__reset {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 5px 0;
+  padding: 10px;
+  width: 100%;
+  max-width: 150px;
+  background-color: transparent;
+  border: 1px solid var(--color-text);
+  border-radius: 3px;
+  font-family: $ff-Montserrat;
+  font-size: 14px;
+  line-height: 16px;
+  text-transform: uppercase;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: 0.3s ease;
+  transition-property: color, background-color;
+
+  &:hover,
+  &:focus-visible {
+    background-color: var(--color-text);
+    color: var(--background-primary);
+  }
+}

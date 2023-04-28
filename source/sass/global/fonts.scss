@@ -33,3 +33,12 @@
   src: url("./../fonts/Roboto-Mono-Regular.woff2") format("woff2"),
     url("./../fonts/Roboto-Mono-Regular.woff") format("woff");
 }
+
+@font-face {
+  font-family: "VT323";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("./../fonts/VT323.woff2") format("woff2"),
+    url("./../fonts/VT323.woff") format("woff");
+}
