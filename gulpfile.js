@@ -83,6 +83,7 @@ export function createStack () {
 export function copyAssets () {
   return gulp.src([
     'source/fonts/**/*.{woff2,woff}',
+    'source/sounds/**/*.*',
     'source/*.ico',
     'source/*.webmanifest',
   ], {
