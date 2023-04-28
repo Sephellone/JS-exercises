@@ -59,8 +59,6 @@ const renderErrorMessage = (sequence) => {
   })
 
   resultField.append(errorElement);
-
-  console.log('alert: non dna letters!!')
 };
 
 const make35DNAStrand = (sequence) => {
