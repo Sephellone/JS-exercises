@@ -33,8 +33,33 @@ const makeClearSequence = (inputValue) => {
 
 const checkNonDnaSymbols = (sequence) => sequence.split('').every(letter => DNA_LETTERS.includes(letter));
 
-const renderErrorMessage = () => {
-  document.querySelector('[data-dna="result-container"]').innerHTML = 'Error';
+const renderErrorMessage = (sequence) => {
+  const resultField = document.querySelector('[data-dna="result-container"]');
+  resultField.innerHTML = '';
+  const errorTemplate = document.querySelector('#error');
+
+  if (!errorTemplate) {
+    alert('There are non-DNA letters in the sequence!');
+    return
+  }
+
+  const errorElement = errorTemplate.cloneNode(true).content.querySelector('[data-dna="analysis-wrapper"]');
+
+  const initialSequenceField = errorElement.querySelector('[data-dna="initial"]');
+  initialSequenceField.innerHTML = '';
+
+  const sequenceArray = sequence.split('');
+  sequenceArray.forEach((letter) => {
+    const letterSpan = document.createElement('span');
+    letterSpan.textContent = letter;
+    if (!DNA_LETTERS.includes(letter)) {
+      letterSpan.classList.add('dna__error-letter')
+    }
+    initialSequenceField.append(letterSpan);
+  })
+
+  resultField.append(errorElement);
+
   console.log('alert: non dna letters!!')
 };
 
@@ -126,7 +151,7 @@ const createButtonClickHandler = (inputElement, parentElement) => {
   const isDNA = checkNonDnaSymbols(sequence);
 
   if (!isDNA) {
-    renderErrorMessage();
+    renderErrorMessage(sequence);
     return;
   }
 

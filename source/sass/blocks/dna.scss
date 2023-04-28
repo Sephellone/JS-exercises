@@ -10,6 +10,19 @@
   margin: 0;
   margin-bottom: 5px;
   padding: 0;
+
+  &--secondary {
+    color: var(--color-text-transparent06);
+
+    a {
+      color: inherit;
+
+      &:hover,
+      &:focus-visible {
+        color: var(--color-accent);
+      }
+    }
+  }
 }
 
 .dna__input-wrapper {
@@ -226,6 +239,7 @@
   padding: 10px;
   border: 1px solid var(--color-text);
   border-radius: 5px;
+  word-break: break-all;
   color: var(--color-text);
 
   &::before {
@@ -254,6 +268,7 @@
 
 .dna__error-letter {
   background-color: var(--fail-red-bg);
+  color: var(--fail-red-text);
 }
 
 
