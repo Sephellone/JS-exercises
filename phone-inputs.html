@@ -77,6 +77,18 @@
         </div>
         <button class="phones__reset" type="button">Reset</button>
       </section>
+
+      <section class="digital-lock" data-digital-lock="parent">
+        <h2 class="phones__section-title">Digital Lock</h2>
+        <input class="phones__input" type="text" name="digital-lock" readonly data-digital-lock="input">
+
+        <div class="digital-lock__wrapper" data-digital-lock="wrapper"></div>
+        <div class="digital-lock__buttons-wrapper">
+          <button class="phones__reset digital-lock__submit-button" type="button" data-digital-lock="submit">Input</button>
+          <button class="phones__reset" type="button" data-digital-lock="reset">Reset</button>
+        </div>
+
+      </section>
       </div>
     </main>
 
@@ -94,5 +106,17 @@
     </footer>
 
     <script src="./js/script.js" type="module"></script>
+
+    <template id="digital-lock-template">
+      <div class="digital-lock__position" data-digital-lock="position">
+        <button class="digital-lock__button digital-lock__button--increase" type="button" data-digital-lock="increase">
+          <span class="visually-hidden">Increase number</span>
+        </button>
+        <div class="digital-lock__value" data-digital-lock="value">1</div>
+        <button class="digital-lock__button digital-lock__button--decrease" type="button" data-digital-lock="decrease">
+          <span class="visually-hidden">Decrease number</span>
+        </button>
+      </div>
+    </template>
   </body>
 </html>
