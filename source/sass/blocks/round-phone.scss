@@ -1,0 +1,131 @@
+.round-phone {
+  padding: 40px 0 20px 0;
+}
+
+.round-phone__phone-container {
+  position: relative;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 290px;
+  aspect-ratio: 1 / 1;
+  margin-bottom: 20px;
+}
+
+.round-phone__phone {
+  --time: 10ms;
+  --angle: 0;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-text);
+  border-radius: 50%;
+  overflow: hidden;
+  transition: var(--time) ease;
+  transition-property: transform;
+  transform: rotate(var(--angle));
+
+  &.rotated {
+    transform: rotate(0);
+  }
+}
+
+.round-phone__button {
+  position: absolute;
+  z-index: 100;
+  display: block;
+  width: 35px;
+  height: 35px;
+  font-family: $ff-Montserrat;
+  font-size: 16px;
+  background-color: var(--color-text);
+  color: var(--background-primary);
+  border: 2px solid var(--background-primary);
+  border-radius: 50%;
+  cursor: pointer;
+
+  transform: translateX(-50%);
+
+  &:hover {
+    background-color: var(--color-text-darker);
+  }
+
+  &:active {
+    background-color: var(--color-text-darkest);
+    opacity: 1;
+  }
+
+  &[data-round-phone="1"] {
+    top: 105px;
+    left: 89%;
+  }
+
+  &[data-round-phone="2"] {
+    top: 60px;
+    left: 81%;
+  }
+
+  &[data-round-phone="3"] {
+    top: 26px;
+    left: 68%;
+  }
+
+  &[data-round-phone="4"] {
+    top: 12px;
+    left: 50%;
+  }
+
+  &[data-round-phone="5"] {
+    top: 26px;
+    left: 32%;
+  }
+
+  &[data-round-phone="6"] {
+    top: 59px;
+    left: 18.5%;
+  }
+
+  &[data-round-phone="7"] {
+    top: 105px;
+    left: 11%;
+  }
+
+  &[data-round-phone="8"] {
+    top: 157px;
+    left: 12%;
+  }
+
+  &[data-round-phone="9"] {
+    top: 202px;
+    left: 20%;
+  }
+
+  &[data-round-phone="0"] {
+    top: 235px;
+    left: 34%;
+  }
+}
+
+.round-phone__stop {
+  position: absolute;
+  z-index: 0;
+  bottom: 0;
+  left: 50%;
+  width: 60px;
+  height: 100px;
+
+  &:hover {
+    filter: drop-shadow(0 0 4px var(--color-accent));
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-color: var(--background-secondary);
+    clip-path: polygon(0 0, 20% 0%, 70% 100%, 0 100%);
+  }
+}
