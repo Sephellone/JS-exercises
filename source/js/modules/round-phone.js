@@ -46,6 +46,12 @@ const initRoundPhone = () => {
   let x0, y0, x1, y1, x2, y2, angle1, angle2, rotateAngle, rotateTime;
 
   const mouseMoveHandler = (evt) => {
+    const radius = Math.sqrt(Math.pow(evt.clientX - x0, 2) + Math.pow(evt.clientY - y0, 2));
+
+    if(radius < 100) {
+      return
+    }
+
     x2 = evt.clientX - x0;
     y2 = evt.clientY - y0;
     angle2 = getAngle(x2, y2);

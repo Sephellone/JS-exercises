@@ -1,7 +1,8 @@
 import { initDnaComplement } from './modules/dna.js';
 import { initDigitalPhone } from './modules/digital-phone.js';
-import {initWordCounter} from './modules/word-counter.js';
+import { initWordCounter } from './modules/word-counter.js';
 import { initRoundPhone } from './modules/round-phone.js';
+import { initDigitalLock } from './modules/digital-lock.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -13,5 +14,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initDnaComplement();
     initDigitalPhone();
     initRoundPhone();
+    initDigitalLock();
   });
 });
