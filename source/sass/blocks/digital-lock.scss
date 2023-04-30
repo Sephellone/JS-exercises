@@ -34,11 +34,26 @@
   padding: 0;
   background-color: var(--color-text);
   border-radius: 2px;
+  border: 2px solid var(--color-text-lighter);
+  border-bottom-color: var(--color-text-darkest);
+  border-right-color: var(--color-text-darkest);
   cursor: pointer;
 
   &:hover,
   &:focus {
     background-color: var(--color-text-lighter);
+  }
+
+  &:active {
+    opacity: 1;
+    background-color: var(--color-text-darker);
+    border-color: var(--color-text-darkest);
+    border-bottom-color: var(--color-text);
+    border-right-color: var(--color-text);
+
+    &::after {
+      background-color: var(--background-secondary);
+    }
   }
 
   &::after {
