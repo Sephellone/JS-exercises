@@ -34,8 +34,18 @@
 
     <main class="page__main phones">
       <div class="container">
-      <h1 class="page__title">The worst phone inputs</h1>
-      <section class="digital-phone" data-digital-phone="parent">
+      <h1 class="page__title">The most irritating phone inputs</h1>
+      <nav class="phones__nav">
+        <ul>
+          <li><a href="#section-digital-phone">Good old phone</a></li>
+          <li><a href="#section-round-phone">Even older phone</a></li>
+          <li><a href="#section-digital-lock">Digital lock style</a></li>
+          <li><a href="#section-floating">Floating buttons</a></li>
+          <li><a href="#section-flashing">Flashing number</a></li>
+
+        </ul>
+      </nav>
+      <section class="digital-phone" data-digital-phone="parent" id="section-digital-phone">
         <h2 class="phones__section-title">Good old phone</h2>
         <input class="phones__input" type="text" name="digital-phone" readonly data-digital-phone="input">
         <div class="digital-phone__buttons-wrapper" data-digital-phone="buttons">
@@ -56,9 +66,9 @@
         <button class="phones__reset" type="button">Reset</button>
       </section>
 
-      <section class="round-phone" data-round-phone="parent">
+      <section class="round-phone" data-round-phone="parent" id="section-round-phone">
         <h2 class="phones__section-title">Even older phone</h2>
-        <p>Can only be controlled by mouse. Sorry for the inconvenience</p>
+        <p>Only mouse control available. Sorry for the inconvenience</p>
         <input class="phones__input" type="text" name="round-phone" readonly data-round-phone="input">
         <div class="round-phone__phone-container" data-round-phone="plane">
           <div class="round-phone__phone" data-round-phone="round">
@@ -78,7 +88,7 @@
         <button class="phones__reset" type="button">Reset</button>
       </section>
 
-      <section class="digital-lock" data-digital-lock="parent">
+      <section class="digital-lock" data-digital-lock="parent" id="section-digital-lock">
         <h2 class="phones__section-title">Digital Lock</h2>
         <input class="phones__input" type="text" name="digital-lock" readonly data-digital-lock="input">
 
@@ -89,6 +99,45 @@
         </div>
 
       </section>
+
+      <section class="floating" data-floating="parent" id="section-floating">
+        <h2 class="phones__section-title">Floating buttons</h2>
+        <input class="phones__input" type="text" name="floating" readonly data-floating="input">
+
+        <div class="floating__field" data-floating="field">
+          <button class="floating__button" type="button" data-floating="1">1</button>
+          <button class="floating__button" type="button" data-floating="2">2</button>
+          <button class="floating__button" type="button" data-floating="3">3</button>
+          <button class="floating__button" type="button" data-floating="4">4</button>
+          <button class="floating__button" type="button" data-floating="5">5</button>
+          <button class="floating__button" type="button" data-floating="6">6</button>
+          <button class="floating__button" type="button" data-floating="7">7</button>
+          <button class="floating__button" type="button" data-floating="8">8</button>
+          <button class="floating__button" type="button" data-floating="9">9</button>
+          <button class="floating__button" type="button" data-floating="0">0</button>
+          <button class="floating__button" type="button" data-floating="+">+</button>
+          <button class="floating__button" type="button" data-floating="#">#</button>
+          <button class="floating__button" type="button" data-floating="*">*</button>
+        </div>
+        <div class="floating__buttons-wrapper">
+          <button class="phones__reset floating__start-button" type="button" data-floating="start">Start</button>
+          <button class="phones__reset" type="button" data-floating="reset">Reset</button>
+        </div>
+      </section>
+
+      <section class="flashing" data-flashing="parent" id="section-flashing">
+        <h2 class="phones__section-title">Flashing number</h2>
+        <input class="phones__input" type="text" name="flashing" readonly data-flashing="input">
+
+        <div class="flashing__value" data-flashing="value"></div>
+        <div class="flashing__buttons-wrapper">
+          <button class="phones__reset flashing__button" type="button" data-flashing="start">Start</button>
+          <button class="phones__reset flashing__button" type="button" data-flashing="stop">Stop</button>
+          <button class="phones__reset flashing__button" type="button" data-flashing="grab">Grab</button>
+          <button class="phones__reset flashing__button" type="button" data-flashing="reset">Reset</button>
+        </div>
+      </section>
+
       </div>
     </main>
 
