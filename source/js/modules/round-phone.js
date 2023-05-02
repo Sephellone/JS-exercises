@@ -48,7 +48,7 @@ const initRoundPhone = () => {
   const mouseMoveHandler = (evt) => {
     const radius = Math.sqrt(Math.pow(evt.clientX - x0, 2) + Math.pow(evt.clientY - y0, 2));
 
-    if(radius < 100) {
+    if(radius < 100  || radius > 140) {
       return
     }
 
