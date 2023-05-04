@@ -91,6 +91,10 @@ const initMemoryGame = () => {
       return
     }
 
+    if (first && second) {
+      return
+    }
+
     moves++;
 
     if (!isFirstOpen) {
@@ -102,15 +106,18 @@ const initMemoryGame = () => {
       second = target;
 
       if(compareCards(first, second)) {
-        [first, second].forEach((card) => {
-          setTimeout(() => {
+
+        setTimeout(() => {
+          [first, second].forEach((card) => {
             card.classList.add('hidden');
-          }, (TRANSITION_TIME * 4))
-        })
-        isFirstOpen = false;
-        first = null;
-        second = null;
+          });
+          isFirstOpen = false;
+          first = null;
+          second = null;
+        }, (TRANSITION_TIME * 4));
+
         cardsAmount -= 2;
+
         if (cardsAmount === 0) {
           if (best === 0 || moves < best) {
             best = moves;
@@ -118,14 +125,14 @@ const initMemoryGame = () => {
           setTimeout(showGameOverMessage, (TRANSITION_TIME * 5))
         }
       } else {
-        [first, second].forEach((card) => {
-          setTimeout(() => {
+        setTimeout(() => {
+          [first, second].forEach((card) => {
             closeCard(card);
-          }, (TRANSITION_TIME * 4))
-        })
-        isFirstOpen = false;
-        first = null;
-        second = null;
+          });
+          isFirstOpen = false;
+          first = null;
+          second = null;
+        }, TRANSITION_TIME * 5);
       }
     }
   }
