@@ -5,6 +5,7 @@ import { initRoundPhone } from './modules/round-phone.js';
 import { initDigitalLock } from './modules/digital-lock.js';
 import { initFloating } from './modules/floating.js';
 import { initFlashingInput } from './modules/flashing.js';
+import { initMemoryGame } from './modules/memory-game.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -19,5 +20,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initDigitalLock();
     initFloating();
     initFlashingInput();
+    initMemoryGame();
   });
 });

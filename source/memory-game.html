@@ -9,8 +9,8 @@
     <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
     <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
     <link rel="manifest" href="./site.webmanifest">
-    <title>Some JS fun</title>
-    <meta name="description" content="Some vanilla JS things written for fun and learning">
+    <title>Memory card game</title>
+    <meta name="description" content="Simple memory game">
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link rel="stylesheet" href="./css/style.css">
   </head>
@@ -22,27 +22,44 @@
             <use href="./img/icons/stack.svg#logo"></use>
           </svg>
         </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__link" href="./index.html">Home</a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </header>
 
-    <main class="page__main index">
-      <div class="container index__container">
-        <h1 class="page__title">JS fun</h1>
-        <p class="index__description"></p>
-        <ul class="index__list">
-          <li class="index__item">
-            <a href="./counter.html" class="index__link">Word counter</a>
-          </li>
-          <li class="index__item">
-            <a href="./dna-complement.html" class="index__link">Complementary DNA strand</a>
-          </li>
-          <li class="index__item">
-            <a href="./phone-inputs.html" class="index__link">Irritating phone inputs</a>
-          </li>
-          <li class="index__item">
-            <a href="./memory-game.html" class="index__link">Memory card game</a>
-          </li>
-        </ul>
+    <main class="page__main">
+      <div class="container">
+        <section class="memory" data-memory="parent">
+        <h1 class="page__title">Memory card game</h1>
+
+        <div class="memory__menu" data-memory="menu"></div>
+        <div class="memory__field" data-memory="field">
+        </div>
+        <div class="memory__message hidden" data-memory="message">
+          <h2>Game over</h2>
+          <dl>
+            <div class="memory__result-wrapper">
+              <dt>Moves:</dt>
+              <dd data-memory="message-moves">0</dd>
+            </div>
+            <div class="memory__result-wrapper">
+              <dt>Best:</dt>
+              <dd data-memory="message-best-moves">0</dd>
+            </div>
+          </dl>
+          <button class="memory__button memory__button--inverted" type="button" data-memory="message-button">Close</button>
+        </div>
+        <div class="memory__buttons-wrapper">
+          <button class="memory__button" type="button" data-memory="start">Start</button>
+          <!-- <button class="memory__button hidden" type="button" data-memory="stop">Stop</button> -->
+        </div>
+
+        </section>
       </div>
     </main>
 
