@@ -36,29 +36,65 @@
       <div class="container">
         <section class="memory" data-memory="parent">
         <h1 class="page__title">Memory card game</h1>
-
-        <div class="memory__menu" data-memory="menu"></div>
-        <div class="memory__field" data-memory="field">
-        </div>
-        <div class="memory__message hidden" data-memory="message">
-          <h2>Game over</h2>
-          <dl>
-            <div class="memory__result-wrapper">
-              <dt>Moves:</dt>
-              <dd data-memory="message-moves">0</dd>
+        <div class="memory__wrapper">
+          <div class="memory__menu" data-memory="menu">
+            <h2 class="memory__menu-title">Choose type of cards</h2>
+            <div class="memory__menu-part">
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="type" value="cat" checked>
+                <span>Cats</span>
+              </label>
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="type" value="dog">
+                <span>Dogs</span>
+              </label>
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="type" value="art">
+                <span>Art</span>
+              </label>
             </div>
-            <div class="memory__result-wrapper">
-              <dt>Best:</dt>
-              <dd data-memory="message-best-moves">0</dd>
+            <h2 class="memory__menu-title">Choose layout size</h2>
+            <div class="memory__menu-part">
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="size" value="12">
+                <span>Easy</span>
+              </label>
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="size" value="24" checked>
+                <span>Normal</span>
+              </label>
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="size" value="36">
+                <span>Hard</span>
+              </label>
+              <label class="memory__menu-label">
+                <input class="visually-hidden" type="radio" name="size" value="48">
+                <span>Insane</span>
+              </label>
             </div>
-          </dl>
-          <button class="memory__button memory__button--inverted" type="button" data-memory="message-button">Close</button>
-        </div>
-        <div class="memory__buttons-wrapper">
-          <button class="memory__button" type="button" data-memory="start">Start</button>
-          <!-- <button class="memory__button hidden" type="button" data-memory="stop">Stop</button> -->
-        </div>
 
+          </div>
+          <div class="memory__field" data-memory="field">
+          </div>
+          <div class="memory__message hidden" data-memory="message">
+            <h2>Game over</h2>
+            <dl>
+              <div class="memory__result-wrapper">
+                <dt>Moves:</dt>
+                <dd data-memory="message-moves">0</dd>
+              </div>
+              <div class="memory__result-wrapper">
+                <dt>Best:</dt>
+                <dd data-memory="message-best-moves">0</dd>
+              </div>
+            </dl>
+            <button class="memory__button memory__button--inverted" type="button" data-memory="message-button">Close</button>
+          </div>
+          <div class="memory__buttons-wrapper">
+            <button class="memory__button" type="button" data-memory="start">Start</button>
+            <!-- <button class="memory__button hidden" type="button" data-memory="stop">Stop</button> -->
+          </div>
+        </div>
         </section>
       </div>
     </main>
