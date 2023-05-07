@@ -1,5 +1,6 @@
 const TRANSITION_TIME = 300;
 const CARDS_TO_RENDER = 24;
+const MAX_CARDS = 26;
 const CARDS_DATA = [
   {'value' : 1, 'url' : ''},
   {'value' : 2, 'url' : ''},
@@ -65,22 +66,30 @@ const initMemoryGame = () => {
   }
 
   field.style.setProperty('--transition', `${TRANSITION_TIME}ms`);
-
+  let cardArtType;
+  let cardsToRender = 24;
   let isFirstOpen = false;
   let first;
   let second;
   let moves = 0;
-  let best = 0;
-  let cardsAmount = CARDS_TO_RENDER;
-
-  // if (localStorage.bestMoves) {
-  //   best = localStorage.bestMoves;
-  // }
+  let bestToCalc;
+  const gameType = {
+    12 : 'easy',
+    24 : 'normal',
+    36 : 'hard',
+    48 : 'insane'
+  }
+  const bestMoves = {
+    'easy' : 0,
+    'normal' : 0,
+    'hard' : 0,
+    'insane' : 0
+  };
+  let cardsAmount;
 
   const showGameOverMessage = () => {
     gameOverMessage.querySelector('[data-memory="message-moves"]').textContent = moves;
-    gameOverMessage.querySelector('[data-memory="message-best-moves"]').textContent = best;
-    // localStorage.bestMoves = best;
+    gameOverMessage.querySelector('[data-memory="message-best-moves"]').textContent = bestMoves[bestToCalc];
 
     gameOverMessage.classList.remove('hidden');
   };
@@ -119,8 +128,8 @@ const initMemoryGame = () => {
         cardsAmount -= 2;
 
         if (cardsAmount === 0) {
-          if (best === 0 || moves < best) {
-            best = moves;
+          if (bestMoves[bestToCalc] === 0 || moves < bestMoves[bestToCalc]) {
+            bestMoves[bestToCalc] = moves;
           }
           setTimeout(showGameOverMessage, (TRANSITION_TIME * 5))
         }
@@ -137,13 +146,21 @@ const initMemoryGame = () => {
     }
   }
 
+  const getOptions = () => {
+    const typeRadio = memoryGameParent.querySelector('[name="type"]:checked');
+    cardArtType = typeRadio.value;
+    const sizeRadio = memoryGameParent.querySelector('[name="size"]:checked');
+    cardsToRender = parseInt(sizeRadio.value);
+    bestToCalc = gameType[cardsToRender];
+  }
+
   const renderCards = () => {
     const arrayForRender = [];
-    while (arrayForRender.length < CARDS_TO_RENDER) {
-      const i = Math.floor(Math.random() * CARDS_DATA.length);
-      if (!arrayForRender.includes(CARDS_DATA[i])) {
-        arrayForRender.push(CARDS_DATA[i]);
-        arrayForRender.push(CARDS_DATA[i]);
+    while (arrayForRender.length < cardsToRender) {
+      const i = Math.floor(Math.random() * MAX_CARDS + 1);
+      if (!arrayForRender.includes(i)) {
+        arrayForRender.push(i);
+        arrayForRender.push(i);
       }
     }
     shuffleArray(arrayForRender);
@@ -151,16 +168,18 @@ const initMemoryGame = () => {
     arrayForRender.forEach(item => {
       const card = document.createElement('div');
       card.classList.add('memory__card');
-      card.setAttribute('data-memory', item.value);
+      const img = document.createElement('img');
+      img.setAttribute('src', `img/memory/${cardArtType}s/${cardArtType}_${item}.webp`);
+      card.append(img);
+      card.setAttribute('data-memory', item);
       field.append(card);
     })
     cardsAmount = arrayForRender.length;
-
-    // console.log(arrayForRender);
   }
 
   const startButtonClickHandler = () => {
     moves = 0;
+    getOptions();
     renderCards();
     field.addEventListener('click', fieldClickHandler);
   }
