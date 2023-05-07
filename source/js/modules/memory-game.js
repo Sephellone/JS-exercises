@@ -1,26 +1,5 @@
-const TRANSITION_TIME = 300;
-const CARDS_TO_RENDER = 24;
+const TRANSITION_TIME = 150;
 const MAX_CARDS = 26;
-const CARDS_DATA = [
-  {'value' : 1, 'url' : ''},
-  {'value' : 2, 'url' : ''},
-  {'value' : 3, 'url' : ''},
-  {'value' : 4, 'url' : ''},
-  {'value' : 5, 'url' : ''},
-  {'value' : 6, 'url' : ''},
-  {'value' : 9, 'url' : ''},
-  {'value' : 10, 'url' : ''},
-  {'value' : 11, 'url' : ''},
-  {'value' : 12, 'url' : ''},
-  {'value' : 13, 'url' : ''},
-  {'value' : 14, 'url' : ''},
-  {'value' : 15, 'url' : ''},
-  {'value' : 16, 'url' : ''},
-  {'value' : 17, 'url' : ''},
-  {'value' : 18, 'url' : ''},
-  {'value' : 19, 'url' : ''},
-  {'value' : 20, 'url' : ''}
-];
 
 const shuffleArray = (array) => {
   for (let i = array.length - 1; i > 0; i--) {
@@ -123,7 +102,7 @@ const initMemoryGame = () => {
           isFirstOpen = false;
           first = null;
           second = null;
-        }, (TRANSITION_TIME * 4));
+        }, (TRANSITION_TIME + 900));
 
         cardsAmount -= 2;
 
@@ -131,7 +110,7 @@ const initMemoryGame = () => {
           if (bestMoves[bestToCalc] === 0 || moves < bestMoves[bestToCalc]) {
             bestMoves[bestToCalc] = moves;
           }
-          setTimeout(showGameOverMessage, (TRANSITION_TIME * 5))
+          setTimeout(showGameOverMessage, (TRANSITION_TIME + 900))
         }
       } else {
         setTimeout(() => {
@@ -141,7 +120,7 @@ const initMemoryGame = () => {
           isFirstOpen = false;
           first = null;
           second = null;
-        }, TRANSITION_TIME * 5);
+        }, TRANSITION_TIME + 1000);
       }
     }
   }
