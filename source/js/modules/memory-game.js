@@ -96,7 +96,7 @@ const initMemoryGame = () => {
 
   const fieldClickHandler = (evt) => {
     const target = evt.target
-    if (target.dataset.memory === 'field' || target.classList.contains('open')) {
+    if (target.dataset.memory === 'field' || !target.dataset.memory || target.classList.contains('open')) {
       return
     }
 
