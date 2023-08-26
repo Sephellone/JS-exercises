@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="./site.webmanifest">
+    <title>Timer</title>
+    <meta name="description" content="Just a simple timer">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link rel="stylesheet" href="./css/style.css">
+  </head>
+  <body class="page__body">
+    <header class="page__header header">
+      <div class="container header__container">
+        <a class="header__logo-link" href="https://sephellone.github.io/portfolio/">
+          <svg width="60" height="60" role="img" aria-label="Alexandra Tsidulko. Personal logo. This link will take you to portfolio website.">
+            <use href="./img/icons/stack.svg#logo"></use>
+          </svg>
+        </a>
+        <nav class="header__nav">
+          <ul class="header__nav-list">
+            <li class="header__nav-item">
+              <a class="header__link" href="./index.html">Home</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <main class="page__main">
+      <div class="container">
+        <section class="timer">
+          <h1 class="page__title">Timer countdown</h1>
+          <div class="timer__wrapper">
+            <div class="timer__input-wrapper">
+              <label class="timer__input-label">
+                <span class="timer__label-text">Input time in seconds:</span>
+                <input class="timer__input" type="number" name="time" placeholder="0000">
+              </label>
+              <button class="button timer__button timer__button--start" type="button">Start</button>
+              <button class="button timer__button timer__button--stop" type="button">Stop</button>
+            </div>
+            <div class="timer__time">00 : 00 : 00</div>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <footer class="page__footer footer">
+      <div class="container footer__container">
+        <h2 class="visually-hidden">Copyright</h2>
+
+        <p class="footer__text">
+          <svg width="20" height="20">
+            <use href="./img/icons/stack.svg#icon-copyright"></use>
+          </svg>
+          Designed and developed by Alexandra Tsidulko
+        </p>
+      </div>
+    </footer>
+
+    <script src="./js/script.js" type="module"></script>
+    <template id="result">
+      <div class="dna__result-wrapper" data-dna="result-wrapper">
+        <h2 class="dna__result-title">Complementary RNA strand from 3' to 5':</h2>
+        <div class="dna__result" data-dna="result"></div>
+        <button class="dna__button" type="button" data-dna="copy-button">Copy to clipboard</button>
+      </div>
+    </template>
+
+    <template id="error">
+      <div class="dna__analysis-wrapper" data-dna="analysis-wrapper">
+        <p class="dna__error-message" data-dna="error-message">Error: There are non-DNA or cyrillic letters in your sequence</p>
+        <p class="dna__initial" data-dna="initial">
+          <span>A</span>
+          <span class="dna__error-letter">H</span>
+        </p>
+      </div>
+    </template>
+  </body>
+</html>

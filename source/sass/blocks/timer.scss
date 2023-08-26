@@ -1,0 +1,64 @@
+.timer {
+  padding-top: 40px;
+
+  &__input-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 25px;
+  }
+
+  &__input-label {
+    display: flex;
+    flex-direction: column;
+    margin-right: 20px;
+    margin-bottom: 10px;
+  }
+
+  &__label-text {
+    margin-bottom: 5px;
+  }
+
+  &__input {
+    padding: 6px;
+    color: var(--color-text);
+    background-color: transparent;
+    border: 1px solid var(--color-text);
+    border-radius: 5px;
+
+    -moz-appearance: textfield;
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    &:hover {
+      background-color: var(--color-accent-transparent015);
+    }
+  }
+
+  &__button {
+    margin-right: 15px;
+    padding: 10px;
+    background-color: transparent;
+    font-family: $ff-Montserrat;
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--color-text);
+    border: 1px solid var(--color-text);
+    border-radius: 5px;
+    cursor: pointer;
+
+    &:hover,
+    &:focus-visible {
+      color: var(--color-accent);
+      border-color: var(--color-accent);
+    }
+  }
+
+  &__time {
+    font-size: 32px;
+    font-weight: 600;
+    font-family: $ff-Roboto-Mono;
+  }
+}

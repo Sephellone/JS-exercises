@@ -6,6 +6,7 @@ import { initDigitalLock } from './modules/digital-lock.js';
 import { initFloating } from './modules/floating.js';
 import { initFlashingInput } from './modules/flashing.js';
 import { initMemoryGame } from './modules/memory-game.js';
+import { initTimer } from './modules/timer.js';
 
 window.addEventListener('DOMContentLoaded', () => {
 
@@ -21,5 +22,6 @@ window.addEventListener('DOMContentLoaded', () => {
     initFloating();
     initFlashingInput();
     initMemoryGame();
+    initTimer();
   });
 });
