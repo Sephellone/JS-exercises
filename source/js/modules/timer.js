@@ -5,14 +5,18 @@ const createTimeString = (time) => {
   const minutes = ((time - seconds) / 60) % 60;
   const hours = (time - minutes * 60 - seconds) / 3600;
 
-  return `${hours.toString().padStart(2, '0')} : ${minutes.toString().padStart(2, '0')} : ${seconds.toString().padStart(2, '0')}`
+  return `${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`
 };
 
 const initTimer = () => {
   if (!timerContainer) return;
 
   const timer = timerContainer.querySelector('.timer__time');
-  const input = timerContainer.querySelector('.timer__input');
+
+  const hoursInput = timerContainer.querySelector('.timer__input--hours');
+  const minutesInput = timerContainer.querySelector('.timer__input--minutes');
+  const secondsInput = timerContainer.querySelector('.timer__input--seconds');
+
   const startButton = timerContainer.querySelector('.timer__button--start');
   const stopButton = timerContainer.querySelector('.timer__button--stop');
 
@@ -23,10 +27,10 @@ const initTimer = () => {
     if (time <= 0) return;
     if (!timerInterval) {
       timerInterval = setInterval(() => {
-        time--;
         timer.textContent = createTimeString(time);
+        time--;
 
-        if (time === 0) {
+        if (time < 0) {
           stopTimer();
         }
       }, 1000)
@@ -36,12 +40,13 @@ const initTimer = () => {
   const stopTimer = () => {
     clearInterval(timerInterval);
     timerInterval = null;
+    timer.textContent = createTimeString(0);
   };
 
   const onStartClick = () => {
-    if(!input.value) return;
+    if(!hoursInput.value && !minutesInput.value && !secondsInput.value) return;
     stopTimer();
-    time = Number(input.value);
+    time = Number(hoursInput.value) * 3600 + Number(minutesInput.value) *60 + Number(secondsInput.value);
     startTimer();
   };
 

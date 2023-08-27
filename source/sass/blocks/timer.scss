@@ -4,13 +4,13 @@
   &__input-wrapper {
     display: flex;
     flex-wrap: wrap;
-    margin-bottom: 25px;
+    gap: 10px;
+    margin-bottom: 15px;
   }
 
   &__input-label {
     display: flex;
     flex-direction: column;
-    margin-right: 20px;
     margin-bottom: 10px;
   }
 
@@ -24,6 +24,7 @@
     background-color: transparent;
     border: 1px solid var(--color-text);
     border-radius: 5px;
+    max-width: 70px;
 
     -moz-appearance: textfield;
     &::-webkit-outer-spin-button,
@@ -37,8 +38,15 @@
     }
   }
 
+  &__buttons-wrapper {
+    display: flex;
+    gap: 15px;
+    max-width: 275px;
+    margin-bottom: 30px;
+  }
+
   &__button {
-    margin-right: 15px;
+    flex-grow: 1;
     padding: 10px;
     background-color: transparent;
     font-family: $ff-Montserrat;
@@ -49,16 +57,23 @@
     border-radius: 5px;
     cursor: pointer;
 
+    &--start {
+      background-color: var(--color-accent);
+      color: var(--background-secondary);
+      border-color: var(--color-accent);
+    }
+
     &:hover,
     &:focus-visible {
+      background-color: var( --color-accent-transparent015);
       color: var(--color-accent);
-      border-color: var(--color-accent);
     }
   }
 
   &__time {
-    font-size: 32px;
+    font-size: 42px;
     font-weight: 600;
+    line-height: 1.2;
     font-family: $ff-Roboto-Mono;
   }
 }
