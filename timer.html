@@ -39,13 +39,24 @@
           <div class="timer__wrapper">
             <div class="timer__input-wrapper">
               <label class="timer__input-label">
-                <span class="timer__label-text">Input time in seconds:</span>
-                <input class="timer__input" type="number" name="time" placeholder="0000">
+                <span class="timer__label-text">Hours:</span>
+                <input class="timer__input timer__input--hours" type="number" name="hours" placeholder="00" min="0">
               </label>
+              <label class="timer__input-label">
+                <span class="timer__label-text">Minutes:</span>
+                <input class="timer__input timer__input--minutes" type="number" name="minutes" placeholder="00" min="o">
+              </label>
+              <label class="timer__input-label">
+                <span class="timer__label-text">Seconds:</span>
+                <input class="timer__input timer__input--seconds" type="number" name="seconds" placeholder="00" min="0">
+              </label>
+              </div>
+            <div class="timer__buttons-wrapper">
               <button class="button timer__button timer__button--start" type="button">Start</button>
               <button class="button timer__button timer__button--stop" type="button">Stop</button>
             </div>
-            <div class="timer__time">00 : 00 : 00</div>
+
+            <div class="timer__time">00:00:00</div>
           </div>
         </section>
       </div>
