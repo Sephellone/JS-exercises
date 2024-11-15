@@ -1,0 +1,42 @@
+.share {
+  padding: 20px 0;
+
+  a {
+    text-decoration: none;
+  }
+
+  &__item {
+    margin: 20px;
+    padding: 20px;
+    max-width: 300px;
+    border: 2px solid var(--color-accent);
+  }
+
+  &__item-img {
+    display: block;
+    margin: 10px;
+  }
+
+  &__sn-block {
+    display: flex;
+    gap: 10px;
+  }
+
+  &__sn-button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 50px;
+    height: 50px;
+    border: none;
+    border-radius: 50%;
+    box-shadow: none;
+    font-family: $ff-Montserrat;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    cursor: pointer;
+    background-color: var(--color-accent);
+    color: var(--background-secondary);
+  }
+}

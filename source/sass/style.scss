@@ -8,6 +8,7 @@
 @import "mixins";
 
 /* BLOCKS */
+@import "blocks/button";
 @import "blocks/page";
 @import "blocks/container";
 @import "blocks/index";
@@ -23,3 +24,5 @@
 @import "blocks/flashing";
 @import "blocks/memory";
 @import "blocks/timer";
+@import "blocks/social";
+
