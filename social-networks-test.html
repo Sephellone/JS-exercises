@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html class="page" lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <link rel="icon" href="./img/favicons/icon.svg" type="image/svg+xml">
+    <link rel="icon" href="./favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="./img/favicons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./img/favicons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./img/favicons/favicon-16x16.png">
+    <link rel="mask-icon" href="./img/favicons/safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="manifest" href="./site.webmanifest">
+    <title>Share to social networks</title>
+    <meta name="description" content="Testing social networks share api">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta property="og:title" content="Testing share api" />
+    <meta property="og:image" content="./img/share/meta-img.jpg" />
+    <link rel="stylesheet" href="./css/style.css">
+    <script type="text/javascript" src="https://vk.com/js/api/share.js?93" charset="windows-1251"></script>
+  </head>
+  <body class="page__body">
+    <main class="page__main share">
+      <div class="container share__container">
+        <h1 class="page__title">Share to social networks</h1>
+        <button class="button">Generate item</button>
+        <div class="share__result"></div>
+
+      </div>
+    </main>
+    <template id="item-template">
+      <div class="share__item">
+        <img class="share__item-img" width="200" height="auto" href="#">
+        <h2 class="share__item-title">Item title</h2>
+        <p class="share__item-description">Item description</p>
+        <div class="share__sn-block">
+          <div class="vk-share-button"></div>
+          <a class="share__sn-button __ok" target="_blank">OK</a>
+          <a class="share__sn-button __tg" target="_blank">TG</a>
+        </div>
+      </div>
+    </template>
+    <script src="./js/modules/sn-share.js" type="module"></script>
+  </body>
+  </html>
